@@ -1,23 +1,15 @@
-import logo from './logo.svg';
-import './App.css';
-
 function App() {
+  function getRandomInt(max) {
+    return Math.floor(Math.random() * max);
+  }
+  const fs = require('fs');
+  const files = fs.readdirSync('./rgp_buck/rgp_main');
+
+  const idx = getRandomInt(files.length());
+  const im_url = files[idx];
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <link rel="im" href={im_url} />
     </div>
   );
 }
